@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href=style.css>
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        const list = {
+          "お母さん"          :1,
+          "愛犬"        　　　:4,
+          "noisy girl"      :10,
+          "しみずちひろ"      :15,
+          "にしたんクリニック" :20,
+          "にしたん"         :50,
+        };
+
+        document.getElementById("button").onclick = function () {
+          var random = Math.floor(Math.random() * 100);
+          var rate = 0;
+          for(var data in list){
+            rate += list[data];
+            if(random <= rate){
+              document.getElementById("result").textContent = data;
+              return;
+            }
+          }
+        }
+      }
+    </script>
+
+    <body>
+      <div class="wrapper">
+        <p class="aaa">TS - Omikuji<br></p>
+        <div class="wrapper-button">
+          <button id="button" class="button">lets f**kin go</button>
+        </div>
+        <p id="result"></p>
+      </div>
+    </body>
+  </body>
+</html>
